@@ -3,8 +3,8 @@ using namespace std;
 
 class SinglyLinkedListNode {
     public:
-        int data;  //data
-        SinglyLinkedListNode *next; //next pointer
+        int data; 
+        SinglyLinkedListNode *next; 
 
         SinglyLinkedListNode(int node_data) {
             this->data = node_data;
@@ -67,6 +67,6 @@ int main()
 
         llist->insert_node(nodes);
     }
-    printLinkedList(llist->head);  //fuction calling 
+    printLinkedList(llist->head); 
 
 }
