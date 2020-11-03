@@ -35,7 +35,6 @@ class SinglyLinkedList {
         }
 };
 
-//iterative function for free the linked list
 void free_singly_linked_list(SinglyLinkedListNode* node) {
     while (node) {
         SinglyLinkedListNode* temp = node;
@@ -46,7 +45,6 @@ void free_singly_linked_list(SinglyLinkedListNode* node) {
 }
 
 
-//printing linked list
 void printLinkedList(SinglyLinkedListNode* head) { 
 
     while(head!=NULL)
