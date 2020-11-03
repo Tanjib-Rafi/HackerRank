@@ -3,8 +3,8 @@ using namespace std;
 
 class SinglyLinkedListNode {
     public:
-        int data;  //data
-        SinglyLinkedListNode *next; //next pointer
+        int data;
+        SinglyLinkedListNode *next;
 
         SinglyLinkedListNode(int node_data) {
             this->data = node_data;
@@ -35,40 +35,55 @@ class SinglyLinkedList {
         }
 };
 
-//iterative function for free the linked list
+void print_singly_linked_list(SinglyLinkedListNode* node) {
+    while (node) {
+        cout << node->data;
+
+        node = node->next;
+    }
+}
+
 void free_singly_linked_list(SinglyLinkedListNode* node) {
     while (node) {
         SinglyLinkedListNode* temp = node;
         node = node->next;
-
         free(temp);
     }
 }
 
-
-//printing linked list
-void printLinkedList(SinglyLinkedListNode* head) { 
-
-    while(head!=NULL)
-    {
-        cout<< head->data <<endl;
-        head=head->next;
-    }
+void reversePrint(SinglyLinkedListNode* head) {
+if(head==NULL)
+{
+    return ;
+}
+else
+{
+    reversePrint(head->next);
+    cout<<head->data<<endl;
+}
 }
 
 int main()
 {
-    SinglyLinkedList* llist = new SinglyLinkedList();
-
-    int n;
-    cin >> n;
+    int tests;
+    cin >> tests;
    
-    for (int i = 0; i <n; i++) {
-        int nodes;
-        cin >> nodes;
 
-        llist->insert_node(nodes);
+    for (int tests_itr = 0; tests_itr < tests; tests_itr++) {
+        SinglyLinkedList* llist = new SinglyLinkedList();
+
+        int llist_count;
+        cin >> llist_count;
+        
+        for (int i = 0; i < llist_count; i++) {
+            int llist_item;
+            cin >> llist_item;
+            
+
+            llist->insert_node(llist_item);
+        }
+
+        reversePrint(llist->head);
     }
-    printLinkedList(llist->head);  //fuction calling 
 
 }
