@@ -42,7 +42,6 @@ void print_doubly_linked_list(DoublyLinkedListNode* node) {
     while (node) {
         cout << node->data;
         node = node->next;
-
     }
 }
 
@@ -50,7 +49,6 @@ void free_doubly_linked_list(DoublyLinkedListNode* node) {
     while (node) {
         DoublyLinkedListNode* temp = node;
         node = node->next;
-
         free(temp);
     }
 }
@@ -79,25 +77,20 @@ int main()
 {
     int t;
     cin >> t;
-  
-    for (int t_itr = 0; t_itr < t; t_itr++) {
+    for (int t_itr = 0; t_itr < t; t_itr++) 
+    {
         DoublyLinkedList* llist = new DoublyLinkedList();
-
         int llist_count;
         cin >> llist_count;
        
-        for (int i = 0; i < llist_count; i++) {
+        for (int i = 0; i < llist_count; i++) 
+        {
             int llist_item;
             cin >> llist_item;
-           
-
             llist->insert_node(llist_item);
         }
-
         DoublyLinkedListNode* llist1 = reverse(llist->head);
-
         print_doubly_linked_list(llist1);
-
         free_doubly_linked_list(llist1);
     }
 }
